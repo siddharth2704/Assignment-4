@@ -1,0 +1,2 @@
+## Using DVC ensures each stage of the ML workflow (data → train → evaluate) is versioned and reproducible.
+## CI/CD with GitHub Actions automatically runs this pipeline on every push, ensuring consistent results and catching errors early. This setup reduces manual effort and improves reliability compared to only running code locally.

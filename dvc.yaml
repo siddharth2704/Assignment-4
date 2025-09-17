@@ -1,0 +1,25 @@
+stages:
+  train:
+    cmd: python src/train.py
+    deps:
+      - src/train.py
+      - data/data.csv
+      - params.yaml
+    outs:
+      - models/model.pkl
+      - data/processed/X_test.csv
+      - data/processed/y_test.csv
+      - outputs/y_pred.csv
+
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+      - src/evaluate.py
+      - models/model.pkl
+      - data/processed/y_test.csv
+      - outputs/y_pred.csv
+    metrics:
+      - metrics.json
+
+
+
